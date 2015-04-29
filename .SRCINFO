@@ -1,6 +1,6 @@
 pkgbase = nvidia-utils-llb
 	pkgver = 346.59
-	pkgrel = 2
+	pkgrel = 3
 	url = http://www.nvidia.com/
 	arch = i686
 	arch = x86_64
@@ -18,12 +18,14 @@ pkgname = nvidia-utils-llb
 	optdepends = gtk2: nvidia-settings
 	optdepends = xorg-server-devel: nvidia-xconfig
 	optdepends = opencl-nvidia-llb: OpenCL support
+	provides = nvidia-utils
 	conflicts = nvidia-utils
 
 pkgname = nvidia-libgl-llb
 	pkgdesc = NVIDIA drivers libraries symlinks (Long lived branch)
 	depends = nvidia-utils-llb
 	provides = libgl
+	provides = nvidia-libgl
 	conflicts = libgl
 	conflicts = nvidia-libgl
 
@@ -32,5 +34,6 @@ pkgname = opencl-nvidia-llb
 	depends = libcl
 	depends = zlib
 	optdepends = opencl-headers: headers necessary for OpenCL development
+	provides = opencl-nvidia
 	conflicts = opencl-nvidia
 

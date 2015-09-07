@@ -4,8 +4,8 @@
 # Contributor: James Rayner <iphitus@gmail.com>
 pkgbase=nvidia-utils-llb
 pkgname=('nvidia-utils-llb' 'nvidia-libgl-llb' 'opencl-nvidia-llb')
-pkgver=352.41
-pkgrel=1
+pkgver=346.72
+pkgrel=2
 arch=('i686' 'x86_64')
 url="http://www.nvidia.com/"
 license=('custom')
@@ -13,8 +13,8 @@ options=('!strip')
 source_i686=("http://download.nvidia.com/XFree86/Linux-x86/$pkgver/NVIDIA-Linux-x86-$pkgver.run")
 source_x86_64=("http://download.nvidia.com/XFree86/Linux-x86_64/$pkgver/NVIDIA-Linux-x86_64-$pkgver-no-compat32.run")
 
-sha256sums_i686=('b3fc5af7bb2852305272ffb3d5d73fbfba639d6a2af9e34a007dde3c6133f6e3')
-sha256sums_x86_64=('a67cca72f7de2b5a8d822001b5a78012373989a97388fe9eff56a75e6cad30cd')
+sha256sums_i686=('1c3de9895809eb4a61306a46902d12ddfc6c6305ac99d369c56270a962200c2e')
+sha256sums_x86_64=('f0d821e3cedb9365548516d4a2155b80718fd018405c83919a7142b23d27a849')
 
 [[ "$CARCH" = "i686" ]] && _pkg="NVIDIA-Linux-x86-${pkgver}"
 [[ "$CARCH" = "x86_64" ]] && _pkg="NVIDIA-Linux-x86_64-${pkgver}-no-compat32"

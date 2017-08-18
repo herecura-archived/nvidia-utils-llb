@@ -1,5 +1,5 @@
 post_upgrade() {
-  echo "If you run into trouble with CUDA not being available, run nvidia-modprobe first."
+  echo ":: If CUDA is unavailable, run 'nvidia-modprobe'."
 }
 
 post_install() {

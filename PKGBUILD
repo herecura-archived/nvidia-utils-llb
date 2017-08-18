@@ -78,13 +78,11 @@ package_nvidia-utils-llb() {
     ln -s "libglx.so.${pkgver}" "${pkgdir}/usr/lib/nvidia/xorg/libglx.so"	# X doesn't find glx otherwise
     
     install -D -m755 "libGLX_nvidia.so.${pkgver}" "${pkgdir}/usr/lib/libGLX_nvidia.so.${pkgver}"
-    # now in mesa driver
-    #ln -s "libGLX_nvidia.so.${pkgver}" "${pkgdir}/usr/lib/libGLX_indirect.so.0"
+    ln -s "libGLX_nvidia.so.${pkgver}" "${pkgdir}/usr/lib/libGLX_indirect.so.0"
 
     # Wayland stuff
-    install -D -m755 "libnvidia-egl-wayland.so.1.0.1" "${pkgdir}/usr/lib/libnvidia-egl-wayland.so.1.0.1"
-    ln -s "libnvidia-egl-wayland.so.1.0.1" "${pkgdir}/usr/lib/libnvidia-egl-wayland.so.1"
-    install -D -m644 "10_nvidia_wayland.json" "${pkgdir}/usr/share/egl/egl_external_platform.d/10_nvidia_wayland.json"
+    install -D -m755 "libnvidia-egl-wayland.so.${pkgver}" "${pkgdir}/usr/lib/libnvidia-egl-wayland.so.${pkgver}"
+    ln -s "libnvidia-egl-wayland.so.${pkgver}" "${pkgdir}/usr/lib/libnvidia-egl-wayland.so.0"
 
     # OpenGL libraries
     install -D -m755 "libEGL_nvidia.so.${pkgver}" "${pkgdir}/usr/lib/libEGL_nvidia.so.${pkgver}"
@@ -105,7 +103,7 @@ package_nvidia-utils-llb() {
     install -D -m755 "libnvidia-ml.so.${pkgver}" "${pkgdir}/usr/lib/libnvidia-ml.so.${pkgver}"
 
     # Vulkan ICD
-    install -D -m644 "nvidia_icd.json.template" "${pkgdir}/usr/share/vulkan/icd.d/nvidia_icd.json"
+    install -D -m644 "nvidia_icd.json" "${pkgdir}/usr/share/vulkan/icd.d/nvidia_icd.json"
 
     # VDPAU
     install -D -m755 "libvdpau_nvidia.so.${pkgver}" "${pkgdir}/usr/lib/vdpau/libvdpau_nvidia.so.${pkgver}"
